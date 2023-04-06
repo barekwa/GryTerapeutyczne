@@ -41,13 +41,14 @@ namespace AmciaApka.Controllers
                     DifficultyLevel = group.Key,
                     AvgMistakes = group.Average(g => g.Mistakes),
                     GamesCount = group.Count(),
-                    AvgTime = group.Average(g => g.Time),
+                    AvgTime = Math.Round(group.Average(g => g.Time), 2),
                 }).ToList();
             ViewBag.UserName = _context.Users.FirstOrDefault(u => u.Id == id).Name;
             ViewBag.Results = results;
 
             return View(games.ToList());
         }
+
 
     }
 }
