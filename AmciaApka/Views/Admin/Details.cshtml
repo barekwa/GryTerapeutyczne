@@ -1,0 +1,49 @@
+﻿@model List<GameResults>
+
+<h1>Gry użytkownika @ViewBag.UserName</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Typ gry</th>
+            <th>Poziom trudności</th>
+            <th>Liczba błędów</th>
+            <th>Czas (s)</th>
+            <th>Data</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var result in Model)
+        {
+            <tr>
+                <td>@result.GameType</td>
+                <td>@result.Difficulty</td>
+                <td>@result.Mistakes</td>
+                <td>@result.Time</td>
+                <td>@result.Date</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Poziom trudności</th>
+            <th>Średnia liczba pomyłek</th>
+            <th>Liczba gier</th>
+            <th>Średni czas</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var result in ViewBag.Results)
+        {
+            <tr>
+                <td>@result.DifficultyLevel</td>
+                <td>@result.AvgMistakes</td>
+                <td>@result.GamesCount</td>
+                <td>@result.AvgTime</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

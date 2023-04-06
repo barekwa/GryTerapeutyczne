@@ -1,0 +1,24 @@
+﻿.chooseNumber{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.chooseNumber > img {
+    width: 8%;
+}
+.randNum {
+    min-height: 180px;
+    width: 40%;
+    display: inline-block;
+}
+//
+.imgDiv{
+    margin-bottom: 15px;
+    text-align: center;
+}
+@media screen and (max-width: 768px) {
+    .randNum {
+        min-height: 180px;
+        width: 60%;
+    }
+}

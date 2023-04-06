@@ -1,0 +1,25 @@
+﻿@model AmciaApka.Models.User;
+@if (TempData["Alert"] != null)
+{
+    <div class="alert alert-danger ">
+        @TempData["Alert"]
+    </div>
+}
+<p>Register</p>
+<form method="post" asp-action="AddUser">
+    <div>
+        <label>Nazwa użytkownika:</label>
+        <input type="text" name="Name" required />
+    </div>
+    <div>
+        <label>Mail:</label>
+        <input type="email" name="Email" required />
+    </div>
+    <div>
+        <label>Hasło:</label>
+        <input type="password" name="PasswordHash" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!\u0040#$%^&*_=+-.,]).{8,}$" required />
+    </div>
+    <div>
+        <button type="submit">Register</button>
+    </div>
+</form>

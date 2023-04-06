@@ -1,0 +1,26 @@
+﻿@model AmciaApka.Models.User;
+@if (TempData["Alert"] != null)
+{
+    <div class="alert alert-danger ">
+        @TempData["Alert"]
+    </div>
+}
+<form method="post" asp-action="LoginUser">
+    <div>
+        <label>Username:</label>
+        <input type="text" name="Name" required />
+    </div>
+    <div>
+        <label>E-mail:</label>
+        <input type="text" name="Email" required />
+    </div>
+    <div>
+        <label>Password:</label>
+        <input type="password" name="PasswordHash" required />
+    </div>
+    <div>
+        <button type="submit">Login</button>
+    </div>
+</form>
+<br />
+<a asp-controller="User" asp-action="Register">Register new account</a>

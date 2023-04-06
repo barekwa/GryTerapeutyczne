@@ -1,8 +1,11 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    if (ViewContext.HttpContext.User.Identity.IsAuthenticated)
+    {
+        ViewData["Title"] = "Wybierz gre";
+    }
+    else
+    {
+        ViewData["Title"] = "Zaloguj się aby zagrać w gry";
+    }
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h1>@ViewData["Title"]</h1>

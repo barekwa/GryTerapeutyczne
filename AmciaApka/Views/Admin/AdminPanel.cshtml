@@ -1,0 +1,19 @@
+﻿@model List<User>
+
+<h1>Użytkownicy</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Użytkownik</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var result in Model)
+        {
+            <tr>
+                <td><a asp-action="ShowGames" asp-route-id="@result.Id">@result.Name</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,21 @@
+﻿.toMatch img{
+    width: 40%;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+.toMatch{
+    text-align: center;
+}
+.choose img{
+    width: 12%;
+}
+.choose {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+@media screen and (max-width: 768px) {
+    .toMatch img{
+        width: 70%;
+    }
+}

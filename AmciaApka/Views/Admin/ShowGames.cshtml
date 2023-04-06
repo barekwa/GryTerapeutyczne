@@ -1,0 +1,16 @@
+﻿@model List<GameResults>
+
+<h1> Gry użytkownika @ViewBag.UserName </h1>
+
+<table class="table">
+    <tr>
+        <td>Typ Gry:</td>
+     </tr>
+     @foreach(var game in @Model)
+    {
+        <tr>
+            <td><a asp-action="Details" asp-route-type="@game.GameType" asp-route-id="@game.User.Id">@game.GameType</a></td>
+        </tr>
+    }
+</table>
+

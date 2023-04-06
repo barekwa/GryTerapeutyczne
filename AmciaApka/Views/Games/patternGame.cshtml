@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Dopasuj wzór";
+}
+<head>
+    <link rel="stylesheet" href="~/css/patternGame.css" />
+</head>
+
+<h1>@ViewData["Title"]</h1>
+<section class="memory-game"></section>
+<p>Wybierz pasujący element</p>
+<section class="choose-card">
+    <div class="memory-card" name="../img/aurelia.svg">
+        <img class="front-face" src="../img/aurelia.svg" alt="Aurelia" />
+    </div>
+    <div class="memory-card" name="../img/vue.svg">
+        <img class="front-face" src="../img/vue.svg" alt="Vue" />
+    </div>
+    <div class="memory-card" name="../img/angular.svg">
+        <img class="front-face" src="../img/angular.svg" alt="Angular" />
+    </div>
+    <div class="memory-card" name="../img/ember.svg">
+        <img class="front-face" src="../img/ember.svg" alt="Ember" />
+    </div>
+    <div class="memory-card" name="../img/backbone.svg">
+        <img class="front-face" src="../img/backbone.svg" alt="Backbone" />
+    </div>
+    <div class="memory-card" name="../img/react.svg">
+        <img class="front-face" src="../img/react.svg" alt="React" />
+    </div>
+</section>
+<script src="~/js/patternGame.js" type="module"></script>
+
