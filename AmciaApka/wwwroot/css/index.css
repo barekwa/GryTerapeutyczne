@@ -1,0 +1,21 @@
+.games{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5%;
+}
+.chooseGame{
+    flex-basis: 25%;
+    height: 20vh;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    margin-bottom: 0.5%;
+}
+@media screen and (max-width: 768px) {
+    .chooseGame {
+        height: 10vh;
+    }
+}

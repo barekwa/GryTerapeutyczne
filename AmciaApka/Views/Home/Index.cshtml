@@ -1,11 +1,40 @@
-﻿@{
+﻿<head>
+    <link rel="stylesheet" href="~/css/index.css" />
+</head>
+@{
     if (ViewContext.HttpContext.User.Identity.IsAuthenticated)
     {
-        ViewData["Title"] = "Wybierz gre";
+        <h3>Wybierz grę</h3>
+        <section class="games">
+            <div class="chooseGame">
+                <a asp-action="Memory" asp-controller="Games">
+                    Memory
+                </a>
+            </div>
+            <div class="chooseGame">
+                <a asp-action="patternGame" asp-controller="Games">
+                    Dopasuj wzór
+                </a>
+            </div>
+            <div class="chooseGame">
+                <a asp-action="matchImgToNumber" asp-controller="Games">
+                    Dopasuj ilość
+                </a>
+            </div>
+            <div class="chooseGame">
+                <a asp-action="matchEmotions" asp-controller="Games">
+                    Dopasuj emocje
+                </a>
+            </div>
+            <div class="chooseGame">
+                <a asp-action="Quiz" asp-controller="Games">
+                    Dopasuj obrazek
+                </a>
+            </div>
+        </section>
     }
     else
     {
-        ViewData["Title"] = "Zaloguj się aby zagrać w gry";
+        <h3><a asp-action="Login" asp-controller="User">Zaloguj się</a> aby zagrać w gry</h3>
     }
 }
-<h1>@ViewData["Title"]</h1>

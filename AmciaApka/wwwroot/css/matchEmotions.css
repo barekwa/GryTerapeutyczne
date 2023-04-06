@@ -4,6 +4,7 @@
 .chooseEmotion {
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
 }
 .emotionImg {
     text-align: center;

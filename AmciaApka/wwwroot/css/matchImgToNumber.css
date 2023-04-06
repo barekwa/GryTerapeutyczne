@@ -5,13 +5,13 @@
 }
 .chooseNumber > img {
     width: 8%;
+    cursor: pointer;
 }
 .randNum {
     min-height: 180px;
     width: 40%;
     display: inline-block;
 }
-//
 .imgDiv{
     margin-bottom: 15px;
     text-align: center;

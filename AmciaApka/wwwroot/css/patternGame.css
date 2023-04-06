@@ -5,7 +5,9 @@
     flex-wrap: wrap;
     perspective: 1000px;
 }
-
+.choose-card {
+    cursor: pointer;
+}
 .memory-card {
     width: 11%;
     margin: 0.5%;
