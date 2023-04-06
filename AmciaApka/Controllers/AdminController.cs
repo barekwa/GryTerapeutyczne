@@ -39,7 +39,7 @@ namespace AmciaApka.Controllers
                 .Select(group => new
                 {
                     DifficultyLevel = group.Key,
-                    AvgMistakes = group.Average(g => g.Mistakes),
+                    AvgMistakes = Math.Round(group.Average(g => g.Mistakes),2),
                     GamesCount = group.Count(),
                     AvgTime = Math.Round(group.Average(g => g.Time), 2),
                 }).ToList();
