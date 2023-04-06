@@ -5,7 +5,7 @@
     sendToController
 } from './functions.js'
 
-let emotions = ["Złość", "Zaskoczenie", "Radość", "Obrzydzenie", "Smutek", "Strach"];
+let emotions = ["../img/emotionsMatch/zlosc.jpg", "../img/emotionsMatch/zaskoczenie.png", "../img/emotionsMatch/radosc.png", "../img/emotionsMatch/obrzydzenie.png", "../img/emotionsMatch/smutek.png", "../img/emotionsMatch/strach.png"];
 let emotionsImg = ["../img/zlosc.png", "../img/zaskoczenie.png", "../img/radosc.png", "../img/obrzydzenie.png", "../img/smutek.png", "../img/strach.png"];
 let div = document.querySelector(".chooseEmotion");
 let difficulty;
@@ -70,13 +70,13 @@ function startGame() {
                 }
                 randEmotions = shuffleArray([...randEmotions, randInt]);
                 randEmotions.forEach(element => {
-                    let p = document.createElement("p");
-                    p.setAttribute("name", emotions[element]);
-                    p.textContent = emotions[element];
-                    div.appendChild(p);
+                    let img = document.createElement("img");
+                    img.src = emotions[element];
+                    img.setAttribute("name", emotions[element]);
+                    div.appendChild(img);
                 })
                 time = startTimer();
-                document.querySelectorAll(".chooseEmotion p").forEach(element => {
+                document.querySelectorAll(".chooseEmotion img").forEach(element => {
                     element.addEventListener("click", () => {
                         if (element.getAttribute("name") == emotionToMatchDiv.getAttribute("name")) {
                             const elapsedTime = time.stop();
