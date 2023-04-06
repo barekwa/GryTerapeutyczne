@@ -34,7 +34,7 @@ function onClick() {
             setTimeout(() => {
                 const elapsedTime = time.stop();
                 sendToController("Dopasuj wzor", difficulty, mistakes, elapsedTime);
-                alert("Wygra³eœ!");
+                alert("Wygra\u0142e\u015B!");
                 getRandPattern();
             }, 500);
         }
