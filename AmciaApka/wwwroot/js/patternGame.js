@@ -42,7 +42,7 @@ function onClick() {
         }
     }
     else {
-        wrong.innerHTML = "Spróbuj jeszcze raz";
+        wrong.innerHTML = "Spr\u00F3buj jeszcze raz";
         mistakes++;
     }
 }
