@@ -17,9 +17,11 @@ let randPattern = [];
 let mistakes = 0;
 let time;
 let dif;
+let wrong = document.querySelector(".wrong");
 
 
 function onClick() {
+    wrong.innerHTML = "";
     if (this.getAttribute("name") == imgs[randPattern[matchedCount]]) {
         let newElement = document.createElement("div");
         let newImg = document.createElement("img");
@@ -39,8 +41,10 @@ function onClick() {
             }, 500);
         }
     }
-    else
+    else {
+        wrong.innerHTML = "Spróbuj jeszcze raz";
         mistakes++;
+    }
 }
 
 function getRandPattern() {

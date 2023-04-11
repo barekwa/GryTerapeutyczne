@@ -10,6 +10,7 @@ let lockBoard = false;
 let firstCard, secondCard;
 let time;
 
+
 function startGame(numOfCards) {
     resetBoard();
     cardsContainer.innerHTML = "";

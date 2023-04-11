@@ -16,8 +16,11 @@ let prevRand = randInt;
 let randInt2;
 let mistakes = 0;
 let time;
+let wrong = document.querySelector(".wrong");
+
 
 function onClick() {
+    wrong.innerHTML = "";
     if (this.getAttribute("name") == imgs[randInt][7]) {
         const elapsedTime = time.stop();
         sendToController("Dopasuj ilosc", difficulty, mistakes, elapsedTime);
@@ -30,8 +33,10 @@ function onClick() {
         randNumImg.src = imgs[randInt];
         startGame();
     }
-    else
+    else {
+        wrong.innerHTML = "Spróbuj jeszcze raz";
         mistakes++;
+    }
 }
 function startGame() {
     mistakes = 0;

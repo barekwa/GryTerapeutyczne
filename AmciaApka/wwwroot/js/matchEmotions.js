@@ -10,6 +10,7 @@ let emotionsImg = ["../img/zlosc.png", "../img/zaskoczenie.png", "../img/radosc.
 let div = document.querySelector(".chooseEmotion");
 let difficulty;
 
+let wrong = document.querySelector(".wrong");
 let randInt = getRandomInt(emotionsImg.length);
 let prevRand = randInt;
 let randInt2;
@@ -78,6 +79,7 @@ function startGame() {
                 time = startTimer();
                 document.querySelectorAll(".chooseEmotion img").forEach(element => {
                     element.addEventListener("click", () => {
+                        wrong.innerHTML = "";
                         if (element.getAttribute("name") == emotionToMatchDiv.getAttribute("name")) {
                             const elapsedTime = time.stop();
                             sendToController("Dopasuj emocje", difficulty, mistakes, elapsedTime);
@@ -93,8 +95,10 @@ function startGame() {
                             emotionToMatchDiv.setAttribute("name", emotions[randInt]);
                             startGame();
                         }
-                        else
+                        else {
+                            wrong.innerHTML = "Spróbuj jeszcze raz";
                             mistakes++;
+                        }
                     });
                 });
             }

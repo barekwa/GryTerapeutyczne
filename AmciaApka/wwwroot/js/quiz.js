@@ -7,6 +7,7 @@
 let time;
 let mistakes = 0;
 let dif;
+let wrong = document.querySelector(".wrong");
 
 
 const values = ["droga", "pies", "kuchnia", "kwiatek", "deszcz", "sypialnia", "toaleta"]
@@ -20,7 +21,8 @@ let prevRand = randInt;
 let img = document.querySelector(".toMatch img");
 img.src = imgs[randInt];
 img.setAttribute("name", values[randInt]);
-function onClick(){
+function onClick() {
+    wrong.innerHTML = "";
     if (this.getAttribute("name") == img.getAttribute("name")) {
         const elapsedTime = time.stop();
         sendToController("Quiz", difficulty, mistakes, elapsedTime);
@@ -35,8 +37,10 @@ function onClick(){
         img.setAttribute("name", values[randInt]);
         startGame();
     }
-    else
+    else {
+        wrong.innerHTML = "Spróbuj jeszcze raz";
         mistakes++;
+    }
 }
 function startGame() {
     mistakes = 0;
